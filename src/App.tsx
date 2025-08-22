@@ -21,18 +21,17 @@ const Portfolio: React.FC = () => {
   });
   const containerRef = useRef<HTMLDivElement | null>(null);
   const themeButtonRef = useRef<HTMLButtonElement | null>(null);
-
-
+  
   useGSAP(() => {
     gsap.fromTo(
       containerRef.current,
-      { opacity: 0, y:-20 },
-      { opacity: 1, y:0, duration: 1, delay:0.2 }
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 1, delay: 0.2 }
     );
     gsap.fromTo(
       themeButtonRef.current,
       { opacity: 0 },
-      { opacity: 1, duration: 1, delay:1.8 }
+      { opacity: 1, duration: 1, delay: 1.8 }
     );
   });
 
@@ -68,24 +67,26 @@ const Portfolio: React.FC = () => {
     : "bg-gray-100 hover:bg-gray-200 border-gray-300 text-gray-700";
 
   return (
-    <div 
-      className={`flex items-center select-none justify-center p-5 transition-colors duration-300 h-screen ${themeClasses}`}
+    <div
+      className={`min-h-screen flex items-center justify-center p-3 sm:p-5 lg:p-8 transition-colors duration-300 ${themeClasses}`}
     >
       <div
-      ref={containerRef}
-        className={`w-full max-w-2/7 rounded-3xl pt-7 pb-7 pr-8 pl-8 shadow-2xl border transition-all ${cardClasses}`}
+        ref={containerRef}
+        className={`w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl 
+        rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg sm:shadow-2xl 
+        border transition-all duration-300 ${cardClasses}`}
       >
-        <div className="flex justify-end mb-3">
+        <div className="flex justify-end mb-3 sm:mb-4">
           <button
             ref={themeButtonRef}
             onClick={toggleTheme}
-            className={`p-2 rounded-lg border transition-colors ${buttonClasses}`}
+            className={`p-2 rounded-lg border transition-colors duration-200 ${buttonClasses}`}
             aria-label="Toggle theme"
           >
             {isDark ? (
-              <Sun className="w-4 h-4" />
+              <Sun className="w-4 h-4 sm:w-5 sm:h-5" />
             ) : (
-              <Moon className="w-4 h-4" />
+              <Moon className="w-4 h-4 sm:w-5 sm:h-5" />
             )}
           </button>
         </div>
