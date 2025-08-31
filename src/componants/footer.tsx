@@ -28,11 +28,19 @@ const Footer: React.FC<FooterProps> = ({ isDark }) => {
       <div>
         <div
           ref={titleRef}
-          className={`flex w-full justify-center text-xs font-mono ${
+          className={`flex w-full justify-center text-center px-2 font-mono ${
             isDark ? "text-gray-500" : "text-gray-400"
           }`}
         >
-          © {currentYear} Anup - Crafted with <FiCoffee className="mx-2"/>  and code. Debugged in Inter.
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-[10px] sm:text-xs">
+            <span>© {currentYear} Anup</span>
+            <span className="hidden sm:inline">-</span>
+            <span className="flex items-center">
+              Crafted with <FiCoffee className="mx-1 sm:mx-2 w-3 h-3 sm:w-4 sm:h-4"/> and code
+            </span>
+            <span className="hidden sm:inline">.</span>
+            <span className="hidden sm:inline">Debugged in Inter.</span>
+          </div>
         </div>
       </div>
     </div>

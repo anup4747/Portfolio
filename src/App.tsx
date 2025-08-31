@@ -68,7 +68,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <div
-      className={`min-h-screen flex items-center justify-center p-3 sm:p-5 lg:p-8 transition-colors duration-300 ${themeClasses}`}
+      className={`min-h-screen flex items-center justify-center p-3 sm:p-5 lg:p-8 transition-colors duration-300 ${themeClasses} bg-pattern`}
     >
       <div
         ref={containerRef}

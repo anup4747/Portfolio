@@ -65,7 +65,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ buttonClasses }) => {
             ref={link3}
             href="#"
             className={`flex items-center justify-center w-10 h-10 rounded-lg border transition-colors ${buttonClasses}`}
-            title="Linkdin"
+            title="LinkedIn"
           >
              <Linkedin className="w-4 h-4" />
           </a>
